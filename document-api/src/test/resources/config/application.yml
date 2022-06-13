@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: Document
+  datasource:
+    url: jdbc:h2:mem:document
+    username: document
+    password: document
+    driver-class-name: org.h2.Driver
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: create-drop
+      dialect: org.hibernate.dialect.H2Dialect
+    properties:
+      hibernate:
+        show_sql: false
+
+#jpa:
+#  shared-entity-manager: true
+#  join-transaction: true
+
+#info:
+#  name: Document API
+#  applicationName: Document API
+#  version: ^project.version^
+#  buildNumber: ^BUILD_NUMBER^
+#  buildTimestamp: ^BUILD_TIMESTAMP^
+#  gitCommit: ^GIT_COMMIT^
+#  gitBranch: ^GIT_BRANCH^

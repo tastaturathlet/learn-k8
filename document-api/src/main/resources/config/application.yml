@@ -1,0 +1,50 @@
+spring:
+  application:
+    name: Document API
+  datasource:
+    url: jdbc:h2:mem:document
+    username: document
+    password: document
+    driver-class-name: org.h2.Driver
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: create-drop
+      dialect: org.hibernate.dialect.H2Dialect
+    properties:
+      hibernate:
+        show_sql: false
+server:
+  port: 8080
+  servlet:
+    context-path: /tastaturathlet
+
+info:
+  name: Document API
+  applicationName: Document API
+#  version: ^project.version^
+#  buildNumber: ^BUILD_NUMBER^
+#  buildTimestamp: ^BUILD_TIMESTAMP^
+#  gitCommit: ^GIT_COMMIT^
+#  gitBranch: ^GIT_BRANCH^
+
+management:
+  info:
+    env:
+      enabled: true
+    camel:
+      enabled: false
+  endpoints:
+    enabled-by-default: false
+    jmx:
+      exposure:
+        include: [ 'env', 'health', 'info' ]
+    web:
+      exposure:
+        include:
+          [ 'env', 'health', 'info' ]
+  endpoint:
+    health:
+      enabled: true
+    info:
+      enabled: true
